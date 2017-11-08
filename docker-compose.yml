@@ -5,11 +5,9 @@ fuel_app:
   env_file: ./app/env
   links:
     - fuel_mysql:db
-    - fuel_redis:redis
-    - fuel_memcached:memcached
   volumes:
     - /var/run
-    - ./fuel_project:/usr/src/app
+    - ./php-el-training:/usr/src/app
     - ./app/php-fpm.d:/usr/local/etc/php-fpm.d
 
 fuel_nginx:
@@ -32,25 +30,6 @@ fuel_mysql:
   restart: always
   ports:
     - "3306:3306"
-  volumes_from:
-    - fuel_storage
-
-fuel_redis:
-  container_name: "fuel_redis"
-  image: redis:latest
-  restart: always
-  ports:
-    - "6379:6379"
-  volumes_from:
-    - fuel_storage
-  command: redis-server --appendonly yes
-
-fuel_memcached:
-  container_name: "fuel_memcached"
-  image: memcached:latest
-  restart: always
-  ports:
-    - '11211:11211'
   volumes_from:
     - fuel_storage
 

@@ -13,7 +13,7 @@ Featuring:
 1: Create FuelPHP New Project
 ```
 $ curl get.fuelphp.com/oil | sh
-$ oil create fuel_project
+$ oil create php-el-training
 ```
 
 2: Start services for development
