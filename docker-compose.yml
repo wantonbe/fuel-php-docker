@@ -9,6 +9,7 @@ fuel_app:
     - /var/run
     - ./php-el-training:/usr/src/app
     - ./app/php-fpm.d:/usr/local/etc/php-fpm.d
+    - ./app/conf.d:/usr/local/etc/php/conf.d
 
 fuel_nginx:
   container_name: "fuel_nginx"
