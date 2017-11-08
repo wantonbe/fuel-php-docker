@@ -1,4 +1,4 @@
-FROM php:5.6.29-fpm
+FROM php:5.6-fpm
 
 RUN mkdir -p /usr/src/app
 WORKDIR /usr/src/app
